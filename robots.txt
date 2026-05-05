@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+
+# Sitemap location
+Sitemap: https://staystudio8.com.br/sitemap.xml
+
+# Crawl-delay para bots menos importantes (opcional)
+User-agent: Yandex
+Crawl-delay: 2
+
+User-agent: SemrushBot
+Crawl-delay: 2

@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main # Assegure-se de que sua branch principal seja 'main'
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "Postagens do Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Data de Publicação", name: "date", widget: "datetime" }
+      - { label: "Descrição Curta", name: "description", widget: "text" }
+      - { label: "Imagem de Capa", name: "image", widget: "image" }
+      - { label: "Corpo do Texto", name: "body", widget: "markdown" }
