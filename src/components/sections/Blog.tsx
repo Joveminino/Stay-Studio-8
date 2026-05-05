@@ -47,7 +47,15 @@ const Blog = memo(() => {
               <article>
                 <div className="aspect-[16/9] overflow-hidden rounded-3xl mb-6 bg-muted relative border border-border/10">
                   {post.image ? (
-                     <img src={post.image} alt={post.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                     <img 
+                       src={post.image} 
+                       alt={post.title} 
+                       width="450" 
+                       height="253" 
+                       loading="lazy" 
+                       decoding="async"
+                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                     />
                   ) : (
                      <div className="w-full h-full bg-primary/5 flex items-center justify-center">
                        <Logo light={false} />

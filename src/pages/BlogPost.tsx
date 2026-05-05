@@ -126,6 +126,8 @@ export default function BlogPost() {
               <img 
                 src={post.image} 
                 alt={post.title} 
+                width="1200"
+                height="514"
                 className="w-full h-full object-cover"
               />
             </motion.div>

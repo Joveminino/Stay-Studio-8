@@ -82,7 +82,7 @@ const Solutions = memo(() => {
   const solutions = [
     {
       id: 'hotel',
-      img: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=600",
+      img: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=450",
       icon: <Building2 className="text-foreground" aria-hidden="true" />,
       title: "Hotéis & Resorts",
       features: [
@@ -96,7 +96,7 @@ const Solutions = memo(() => {
     },
     {
       id: 'agency',
-      img: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=600",
+      img: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=450",
       icon: <Compass className="text-foreground" aria-hidden="true" />,
       title: "Agências & Tours",
       features: [
@@ -110,7 +110,7 @@ const Solutions = memo(() => {
     },
     {
       id: 'restaurant',
-      img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=600",
+      img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=450",
       icon: <UtensilsCrossed className="text-foreground" aria-hidden="true" />,
       title: "Gastronomia Premium",
       features: [

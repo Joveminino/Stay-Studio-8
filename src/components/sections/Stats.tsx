@@ -99,7 +99,7 @@ const Stats = memo(() => {
             <div className="bg-background rounded-[3rem] p-10 border border-border/50 relative overflow-hidden group">
               <div className="aspect-[4/5] rounded-[2rem] overflow-hidden mb-8">
                 <img 
-                  src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800" 
+                  src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600" 
                   alt="Design Abstrato" 
                   width="400"
                   height="500"

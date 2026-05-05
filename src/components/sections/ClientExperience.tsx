@@ -92,23 +92,13 @@ const ClientExperience = memo(() => {
       gsap.from(".workflow-card", {
         opacity: 0,
         x: 50,
-        stagger: 0.2,
-        duration: 1,
+        stagger: 0.1,
+        duration: 0.8,
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 70%"
+          start: "top 80%"
         }
-      });
-
-      gsap.to(".molecule", {
-        y: "random(-10, 10)",
-        x: "random(-5, 5)",
-        rotation: "random(-10, 10)",
-        duration: "random(3, 5)",
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut"
       });
     }, sectionRef);
     return () => ctx.revert();
@@ -292,7 +282,15 @@ const ClientExperience = memo(() => {
                   <div className="flex -space-x-2">
                      {[1,2,3].map(i => (
                        <div key={i} className="w-7 h-7 rounded-full border border-background bg-muted overflow-hidden">
-                          <img src={`https://picsum.photos/seed/elite${i}/64?fm=webp`} alt="Parceiro" className="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" loading="lazy" />
+                          <img 
+                             src={`https://picsum.photos/seed/elite${i}/64?fm=webp`} 
+                             alt="Parceiro" 
+                             className="w-full h-full object-cover grayscale" 
+                             width="28" 
+                             height="28" 
+                             referrerPolicy="no-referrer" 
+                             loading="lazy" 
+                           />
                        </div>
                      ))}
                   </div>

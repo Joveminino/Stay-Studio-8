@@ -13,43 +13,50 @@ const CinematicHero = memo(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
       
-      tl.from(".nav-logo", { duration: 0.8, y: -20, opacity: 0 })
-        .from(".nav-link", { duration: 0.6, y: -15, opacity: 0, stagger: 0.04 }, "-=0.6")
-        .from(".hero-pill", { 
-          duration: 1, 
-          scale: 0.8, 
+      tl.from(".hero-title-text", { 
+          duration: 0.6, 
+          y: 10, 
           opacity: 0, 
-          stagger: 0.08,
-          ease: "back.out(1.4)"
-        }, "-=0.4")
-        .from(".hero-title-text", { 
-          duration: 0.8, 
-          y: 30, 
-          opacity: 0, 
-          stagger: 0.08 
-        }, "-=0.6")
-        .from(".hero-abstract-icon", {
-          duration: 0.8,
-          scale: 0.8,
+          stagger: 0.03,
+          ease: "power2.out"
+        })
+        .from(".hero-description", {
+          duration: 0.5,
           opacity: 0,
-          stagger: 0.08,
-          ease: "back.out(1.4)"
+          ease: "none"
         }, "-=0.4")
         .from(".hero-cta-container", {
-          duration: 0.8,
-          y: 20,
+          duration: 0.5,
+          y: 10,
           opacity: 0,
-          ease: "back.out(1.4)"
-        }, "-=0.4");
+          ease: "back.out(1.2)"
+        }, "-=0.3")
+        .from(".nav-logo", { duration: 0.4, y: -10, opacity: 0 }, "-=0.5")
+        .from(".nav-link", { duration: 0.3, y: -10, opacity: 0, stagger: 0.02 }, "-=0.4")
+        .from(".hero-pill", { 
+          duration: 0.5, 
+          scale: 0.9, 
+          opacity: 0, 
+          stagger: 0.04,
+          ease: "back.out(1.2)"
+        }, "-=0.2")
+        .from(".hero-abstract-icon", {
+          duration: 0.4,
+          scale: 0.9,
+          opacity: 0,
+          stagger: 0.04,
+          ease: "back.out(1.2)"
+        }, "-=0.2");
 
       // Floating animations
       gsap.to(".floating-pill", {
-        y: -15,
-        duration: 2.5,
+        y: -10,
+        x: "random(-2, 2)",
+        duration: "random(3, 5)",
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
-        stagger: 0.3
+        stagger: 0.2
       });
     }, containerRef);
 
@@ -63,13 +70,13 @@ const CinematicHero = memo(() => {
         <div className="max-w-5xl w-full relative">
           
           {/* Abstract Elements (Pills and Icons) - Hidden on extra small mobile to focus on text */}
-          <div className="absolute -top-10 md:-top-20 left-4 md:left-10 hero-pill floating-pill hidden sm:block">
+          <div className="absolute -top-10 md:-top-20 left-4 md:left-10 hero-pill floating-pill hidden sm:block will-change-transform">
             <div className="w-24 md:w-32 h-10 md:h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xs shadow-lg">
               Criativo
             </div>
           </div>
 
-          <div className="absolute top-10 -left-10 md:-left-20 hero-abstract-icon floating-pill hidden md:block">
+          <div className="absolute top-10 -left-10 md:-left-20 hero-abstract-icon floating-pill hidden md:block will-change-transform">
             <div className="w-16 h-16 bg-white rounded-full shadow-xl flex items-center justify-center border border-border/50">
               <div className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center">
                 <TrendingUp size={20} className="text-white" />
@@ -77,13 +84,13 @@ const CinematicHero = memo(() => {
             </div>
           </div>
 
-          <div className="absolute -bottom-10 left-10 md:left-20 hero-pill floating-pill hidden lg:block">
+          <div className="absolute -bottom-10 left-10 md:left-20 hero-pill floating-pill hidden lg:block will-change-transform">
             <div className="w-48 h-16 bg-gradient-to-r from-secondary to-destructive rounded-full flex items-center justify-center text-white font-bold shadow-lg text-sm">
               Solução de Problemas
             </div>
           </div>
 
-          <div className="absolute top-40 right-4 md:right-0 hero-pill floating-pill text-sm hidden sm:block">
+          <div className="absolute top-40 right-4 md:right-0 hero-pill floating-pill text-sm hidden sm:block will-change-transform">
             <div className="w-32 md:w-40 h-12 md:h-14 bg-accent rounded-full flex items-center justify-center text-white font-bold shadow-lg text-[9px] md:text-[10px] uppercase tracking-widest whitespace-nowrap">
               Alta Conversão
             </div>
@@ -118,7 +125,7 @@ const CinematicHero = memo(() => {
                 <span className="inline-block px-6 md:px-12 py-2 md:py-4 bg-primary text-white rounded-full transform -rotate-2">Engenharia</span> <br className="sm:hidden" /> de Escala.
               </span>
             </h1>
-            <p className="mt-6 md:mt-8 text-lg md:text-2xl text-muted max-w-3xl mx-auto leading-relaxed">
+            <p className="hero-description mt-6 md:mt-8 text-lg md:text-2xl text-muted max-w-3xl mx-auto leading-relaxed will-change-[transform,opacity]">
               Escalamos negócios de <span className="text-foreground font-bold">Hospitalidade</span> através de ecossistemas digitais de alta conversão. 
               <span className="text-foreground font-bold hidden md:inline"> Web Design Editorial, Tráfego Pago e SEO.</span>
             </p>

@@ -114,19 +114,13 @@ export default function LandingPage() {
         <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="SYS-HEALTH" />
           <Problems />
-        </Suspense>
-        
-        <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="STRAT-SOL" />
           <Solutions />
         </Suspense>
-
+        
         <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="CX-METRICS" />
           <ClientExperience />
-        </Suspense>
-
-        <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="TRAF-ENG" />
           <TrafficStrategy />
         </Suspense>
@@ -134,9 +128,6 @@ export default function LandingPage() {
         <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="ABOUT-HQ" />
           <About />
-        </Suspense>
-
-        <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="GROWTH-DATA" />
           <Stats />
         </Suspense>
@@ -144,9 +135,6 @@ export default function LandingPage() {
         <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="PROC-PHASE" />
           <Process />
-        </Suspense>
-
-        <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="SHIP-ASSETS" />
           <Deliverables />
         </Suspense>
@@ -154,9 +142,6 @@ export default function LandingPage() {
         <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="SCALE-UNIT" />
           <ScaleStrategy />
-        </Suspense>
-
-        <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="FAQ-SUPPORT" />
           <FAQ />
           <Blog />
