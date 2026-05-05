@@ -1,123 +1,17 @@
 [build]
-  publish = "dist"
   command = "npm run build"
+  publish = "dist"
 
-# HEADERS GLOBAIS DE SEGURANÇA E PERFORMANCE
-[[headers]]
-  for = "/*"
-  [headers.values]
-    # HTTPS obrigatório
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    
-    # Prevenir clickjacking
-    X-Frame-Options = "SAMEORIGIN"
-    
-    # Prevenir MIME sniffing
-    X-Content-Type-Options = "nosniff"
-    
-    # Referrer Policy
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    
-    # Permissions Policy
-    Referrer-Policy = "no-referrer-when-downgrade"
-
-    # Content Security Policy (CSP)
-    Content-Security-Policy = """
-      default-src 'self';
-      script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://identity.netlify.com https://unpkg.com;
-      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-      font-src 'self' https://fonts.gstatic.com;
-      img-src 'self' https: data:;
-      connect-src 'self' https://www.google-analytics.com https://script.google.com https://identity.netlify.com;
-      frame-src 'self' https://identity.netlify.com;
-      base-uri 'self';
-      form-action 'self';
-    """
-
-# HEADERS ESPECÍFICOS POR TIPO DE ARQUIVO
-
-# HTML
-[[headers]]
-  for = "*.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-# CSS e JS (cache longo + immutable)
-[[headers]]
-  for = "*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# Imagens (cache longo)
-[[headers]]
-  for = "*.webp"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "*.jpg"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "*.png"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# Fonts (cache longo)
-[[headers]]
-  for = "*.woff2"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# JSON (sitemap, dados)
-[[headers]]
-  for = "*.json"
-  [headers.values]
-    Content-Type = "application/json; charset=utf-8"
-    Cache-Control = "public, max-age=3600"
-
-# XML (sitemap)
-[[headers]]
-  for = "*.xml"
-  [headers.values]
-    Content-Type = "application/xml; charset=utf-8"
-    Cache-Control = "public, max-age=3600"
-
-# REDIRECIONAMENTOS DE SEGURANÇA
-
-# Forçar HTTPS e WWW
-[[redirects]]
-  from = "http://www.staystudio8.com.br/*"
-  to = "https://www.staystudio8.com.br/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "http://staystudio8.com.br/*"
-  to = "https://www.staystudio8.com.br/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://staystudio8.com.br/*"
-  to = "https://www.staystudio8.com.br/:splat"
-  status = 301
-  force = true
-
-# Sitemap redirect (manter compatibilidade)
-[[redirects]]
-  from = "/sitemap.xml"
-  to = "/sitemap.xml"
-  status = 200
-
-# 404 personalizada (ajuste se tiver o arquivo 404.html)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "no-referrer-when-downgrade"
+    Content-Security-Policy = "upgrade-insecure-requests"
