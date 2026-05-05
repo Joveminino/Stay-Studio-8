@@ -1,6 +1,7 @@
 import { memo, useState } from 'react';
 import { motion } from 'motion/react';
 import { Building2, Compass, UtensilsCrossed, CheckCircle2, Info, TrendingUp, ShieldCheck, ArrowRight } from 'lucide-react';
+import { scrollToSection } from '../../lib/navigation';
 
 const Tooltip = ({ text }: { text: string }) => (
   <div className="relative group inline-block">
@@ -290,7 +291,7 @@ const Solutions = memo(() => {
 
                 <div className="flex items-center justify-center">
                   <button 
-                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} 
+                    onClick={() => scrollToSection('contact')} 
                     className="magnetic-btn w-full bg-primary text-on-primary py-4 md:py-5 rounded-2xl font-bold text-base md:text-lg shadow-xl hover:brightness-110 transition-all flex items-center justify-center gap-2"
                   >
                     Ativar Escala <ArrowRight size={18} />

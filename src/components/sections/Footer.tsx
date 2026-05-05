@@ -41,7 +41,7 @@ const Footer = memo(() => (
           <h5 className="text-white font-bold mb-6 uppercase tracking-widest text-[11px]">Estratégia</h5>
           <ul className="space-y-3 md:space-y-4 text-xs md:text-sm text-on-primary/80 font-medium">
             <li><button onClick={() => scrollToSection('categorias')} className="hover:text-white transition-colors">Design de Luxo</button></li>
-            <li><button onClick={() => scrollToSection('categorias')} className="hover:text-white transition-colors">Tráfego Pago</button></li>
+            <li><button onClick={() => scrollToSection('trafego')} className="hover:text-white transition-colors">Tráfego Pago</button></li>
             <li><button onClick={() => scrollToSection('blog')} className="hover:text-white transition-colors font-bold text-primary">Insights Blog</button></li>
             <li><button onClick={() => scrollToSection('modelos')} className="hover:text-white transition-colors">Entregáveis</button></li>
             <li><button onClick={() => scrollToSection('faq')} className="hover:text-white transition-colors italic">Consultoria FAQ</button></li>

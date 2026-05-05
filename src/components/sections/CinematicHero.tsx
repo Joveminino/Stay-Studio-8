@@ -124,7 +124,7 @@ const CinematicHero = memo(() => {
         </button>
         
         <button 
-          onClick={() => scrollToSection('categorias')}
+          onClick={() => scrollToSection('sobre')}
           className="flex items-center gap-2 text-foreground font-black uppercase tracking-widest text-xs hover:gap-4 transition-all py-4 group"
         >
           Laboratório <ArrowDown size={14} className="group-hover:text-primary animate-bounce" />
