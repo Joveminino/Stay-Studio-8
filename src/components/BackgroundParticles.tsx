@@ -9,7 +9,7 @@ const BackgroundParticles = memo(() => {
       <div className="absolute top-[20%] right-[10%] w-[25vw] h-[25vw] rounded-full bg-accent/5 blur-[80px] animate-pulse" style={{ animationDuration: '10s' }} />
 
       {/* Particles - Minimal set for ambiance without heavy JS load */}
-      {Array.from({ length: 6 }).map((_, i) => (
+      {Array.from({ length: 12 }).map((_, i) => (
         <div 
           key={i}
           className="absolute h-1 w-1 rounded-full bg-primary/20 hidden sm:block animate-float"
@@ -21,7 +21,7 @@ const BackgroundParticles = memo(() => {
           }}
         />
       ))}
-      {Array.from({ length: 2 }).map((_, i) => (
+      {Array.from({ length: 4 }).map((_, i) => (
         <div 
           key={`m-${i}`}
           className="absolute h-1 w-1 rounded-full bg-primary/20 sm:hidden animate-float"

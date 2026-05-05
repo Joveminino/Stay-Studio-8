@@ -31,8 +31,6 @@ const CinematicHero = memo(() => {
           opacity: 0,
           ease: "back.out(1.2)"
         }, "-=0.3")
-        .from(".nav-logo", { duration: 0.4, y: -10, opacity: 0 }, "-=0.5")
-        .from(".nav-link", { duration: 0.3, y: -10, opacity: 0, stagger: 0.02 }, "-=0.4")
         .from(".hero-pill", { 
           duration: 0.5, 
           scale: 0.9, 
@@ -41,7 +39,7 @@ const CinematicHero = memo(() => {
           ease: "back.out(1.2)"
         }, "-=0.2")
         .from(".hero-abstract-icon", {
-          duration: 0.4,
+          duration: 0.5,
           scale: 0.9,
           opacity: 0,
           stagger: 0.04,
@@ -50,13 +48,12 @@ const CinematicHero = memo(() => {
 
       // Floating animations
       gsap.to(".floating-pill", {
-        y: -10,
-        x: "random(-2, 2)",
-        duration: "random(3, 5)",
+        y: -15,
+        duration: 2.5,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
-        stagger: 0.2
+        stagger: 0.3
       });
     }, containerRef);
 
@@ -64,19 +61,19 @@ const CinematicHero = memo(() => {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative min-h-[calc(100vh-80px)] w-full overflow-hidden bg-background flex flex-col pt-10">
+    <div id="hero" ref={containerRef} className="relative min-h-[calc(100vh-80px)] w-full overflow-hidden bg-background flex flex-col pt-10">
       {/* Hero Content */}
       <div className="flex-1 flex flex-col items-center justify-center relative px-6 md:px-8 py-10 md:py-20 will-change-opacity">
         <div className="max-w-5xl w-full relative">
           
           {/* Abstract Elements (Pills and Icons) - Hidden on extra small mobile to focus on text */}
-          <div className="absolute -top-10 md:-top-20 left-4 md:left-10 hero-pill floating-pill hidden sm:block will-change-transform">
+          <div className="absolute -top-10 md:-top-20 left-4 md:left-10 hero-pill floating-pill hidden sm:block">
             <div className="w-24 md:w-32 h-10 md:h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xs shadow-lg">
               Criativo
             </div>
           </div>
 
-          <div className="absolute top-10 -left-10 md:-left-20 hero-abstract-icon floating-pill hidden md:block will-change-transform">
+          <div className="absolute top-10 -left-10 md:-left-20 hero-abstract-icon floating-pill hidden md:block">
             <div className="w-16 h-16 bg-white rounded-full shadow-xl flex items-center justify-center border border-border/50">
               <div className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center">
                 <TrendingUp size={20} className="text-white" />
@@ -84,36 +81,21 @@ const CinematicHero = memo(() => {
             </div>
           </div>
 
-          <div className="absolute -bottom-10 left-10 md:left-20 hero-pill floating-pill hidden lg:block will-change-transform">
+          <div className="absolute -bottom-10 left-10 md:left-20 hero-pill floating-pill hidden lg:block">
             <div className="w-48 h-16 bg-gradient-to-r from-secondary to-destructive rounded-full flex items-center justify-center text-white font-bold shadow-lg text-sm">
               Solução de Problemas
             </div>
           </div>
 
-          <div className="absolute top-40 right-4 md:right-0 hero-pill floating-pill text-sm hidden sm:block will-change-transform">
+          <div className="absolute top-40 right-4 md:right-0 hero-pill floating-pill text-sm hidden sm:block">
             <div className="w-32 md:w-40 h-12 md:h-14 bg-accent rounded-full flex items-center justify-center text-white font-bold shadow-lg text-[9px] md:text-[10px] uppercase tracking-widest whitespace-nowrap">
               Alta Conversão
             </div>
           </div>
 
-          <div className="absolute -top-10 right-10 md:right-20 hero-abstract-icon floating-pill will-change-transform">
-            <div className="w-16 h-16 md:w-24 md:h-24 bg-white rounded-full shadow-[0_20px_50px_rgba(37,99,235,0.2)] flex items-center justify-center border border-border/50 p-4 group/svg hover:scale-110 transition-transform duration-700">
-               <div className="relative w-full h-full flex items-center justify-center">
-                  <svg width="100" height="100" viewBox="0 0 100 100" className="w-full h-full text-primary" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="20" y="60" width="15" height="20" fill="currentColor" opacity="0.3">
-                      <animate attributeName="height" values="20;40;20" dur="2s" repeatCount="indefinite" />
-                    </rect>
-                    <rect x="42" y="40" width="15" height="40" fill="currentColor" opacity="0.6">
-                      <animate attributeName="height" values="40;60;40" dur="2.5s" repeatCount="indefinite" />
-                    </rect>
-                    <rect x="65" y="20" width="15" height="60" fill="currentColor">
-                      <animate attributeName="height" values="60;80;60" dur="3s" repeatCount="indefinite" />
-                    </rect>
-                    <circle cx="85" cy="15" r="5" fill="currentColor" className="animate-pulse" />
-                    <path d="M20 60 L42 40 L65 20 L85 15" fill="none" stroke="currentColor" strokeWidth="3" strokeDasharray="5,5" />
-                  </svg>
-                  <TrendingUp size={24} className="absolute text-primary group-hover/svg:scale-125 transition-transform" />
-               </div>
+          <div className="absolute -top-10 right-10 md:right-20 hero-abstract-icon floating-pill">
+            <div className="w-16 h-16 md:w-24 md:h-24 bg-white rounded-full shadow-[0_20px_50px_rgba(37,99,235,0.2)] flex items-center justify-center border border-border/50 group/icon hover:scale-110 transition-all duration-700">
+               <TrendingUp strokeWidth={2.5} className="w-8 h-8 md:w-12 md:h-12 text-primary" />
             </div>
           </div>
 
@@ -125,7 +107,7 @@ const CinematicHero = memo(() => {
                 <span className="inline-block px-6 md:px-12 py-2 md:py-4 bg-primary text-white rounded-full transform -rotate-2">Engenharia</span> <br className="sm:hidden" /> de Escala.
               </span>
             </h1>
-            <p className="hero-description mt-6 md:mt-8 text-lg md:text-2xl text-muted max-w-3xl mx-auto leading-relaxed will-change-[transform,opacity]">
+            <p className="hero-description mt-6 md:mt-8 text-lg md:text-2xl text-muted max-w-3xl mx-auto leading-relaxed">
               Escalamos negócios de <span className="text-foreground font-bold">Hospitalidade</span> através de ecossistemas digitais de alta conversão. 
               <span className="text-foreground font-bold hidden md:inline"> Web Design Editorial, Tráfego Pago e SEO.</span>
             </p>
