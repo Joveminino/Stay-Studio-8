@@ -92,4 +92,19 @@
     0% { transform: translateX(0); }
     100% { transform: translateX(calc(-50% - 1.5rem)); }
   }
+
+  .animate-float {
+    animation: float linear infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(30px, -50px); }
+    66% { transform: translate(-20px, 40px); }
+  }
+
+  section:not(#hero) {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 1000px;
+  }
 }

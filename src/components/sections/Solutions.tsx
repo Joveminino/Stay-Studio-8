@@ -159,6 +159,8 @@ const Solutions = memo(() => {
                 <img 
                   src={s.img} 
                   alt={s.title} 
+                  width="400"
+                  height="224"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                   referrerPolicy="no-referrer" 
                   loading="lazy" 
@@ -215,17 +217,18 @@ const Solutions = memo(() => {
 
           <div className="bg-surface p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-2xl border border-accent/30 relative z-10 text-balance">
             <div className="mb-8 md:mb-10">
-              <h3 className="text-xl md:text-2xl font-bold text-foreground leading-tight">{labels.title}</h3>
+              <h4 className="text-xl md:text-2xl font-bold text-foreground leading-tight">{labels.title}</h4>
             </div>
             
             <div className="space-y-6 md:space-y-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                 <div className="group/field relative">
                   <div className="flex items-center gap-2 mb-2">
-                    <label className="block text-xs font-bold text-muted uppercase tracking-wider">{labels.label1}</label>
+                    <label htmlFor="qty-input" className="block text-xs font-bold text-foreground uppercase tracking-wider">{labels.label1}</label>
                     <Tooltip text={labels.tip1} />
                   </div>
                   <input 
+                    id="qty-input"
                     type="number" 
                     value={qty}
                     onChange={(e) => setQty(parseInt(e.target.value) || 0)}
@@ -234,10 +237,11 @@ const Solutions = memo(() => {
                 </div>
                 <div className="group/field relative">
                   <div className="flex items-center gap-2 mb-2">
-                    <label className="block text-xs font-bold text-muted uppercase tracking-wider">{labels.label2}</label>
+                    <label htmlFor="ticket-input" className="block text-xs font-bold text-foreground uppercase tracking-wider">{labels.label2}</label>
                     <Tooltip text={labels.tip2} />
                   </div>
                   <input 
+                    id="ticket-input"
                     type="number" 
                     value={ticket}
                     onChange={(e) => setTicket(parseInt(e.target.value) || 0)}
@@ -249,10 +253,11 @@ const Solutions = memo(() => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                 <div className="group/field relative">
                   <div className="flex items-center gap-2 mb-2">
-                    <label className="block text-xs font-bold text-muted uppercase tracking-wider">{labels.label3}</label>
+                    <label htmlFor="fee-input" className="block text-xs font-bold text-foreground uppercase tracking-wider">{labels.label3}</label>
                     <Tooltip text={labels.tip3} />
                   </div>
                   <input 
+                    id="fee-input"
                     type="number"
                     value={fee}
                     onChange={(e) => setFee(parseInt(e.target.value) || 0)}
@@ -261,10 +266,11 @@ const Solutions = memo(() => {
                 </div>
                 <div className="group/field relative">
                   <div className="flex items-center gap-2 mb-2">
-                    <label className="block text-xs font-bold text-muted uppercase tracking-wider">{labels.label4}</label>
+                    <label htmlFor="goal-input" className="block text-xs font-bold text-foreground uppercase tracking-wider">{labels.label4}</label>
                     <Tooltip text={labels.tip4} />
                   </div>
                   <input 
+                    id="goal-input"
                     type="number"
                     value={goal}
                     onChange={(e) => setGoal(parseInt(e.target.value) || 0)}
@@ -276,8 +282,8 @@ const Solutions = memo(() => {
               <div className="pt-6 md:pt-8 border-t border-accent/30 space-y-6 md:space-y-8">
                 <div>
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-2 gap-1">
-                    <p className="text-xs text-muted uppercase font-bold tracking-widest">{labels.result}</p>
-                    <p className="text-[10px] text-muted/60">Análise total: R$ {calculateTotalRevenue().toLocaleString('pt-BR')}</p>
+                    <p className="text-xs text-foreground/80 font-bold uppercase tracking-widest">{labels.result}</p>
+                    <p className="text-[10px] text-foreground/60 font-bold">Análise total: R$ {calculateTotalRevenue().toLocaleString('pt-BR')}</p>
                   </div>
                   <output className="text-3xl md:text-4xl font-black text-primary block leading-none">R$ {calculateSavings().toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</output>
                 </div>

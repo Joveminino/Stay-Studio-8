@@ -29,8 +29,8 @@ const ContactForm = lazy(() => import('../components/sections/ContactForm'));
 gsap.registerPlugin(ScrollTrigger);
 
 const LoadingFallback = () => (
-  <div className="w-full h-48 flex items-center justify-center">
-    <div className="w-10 h-10 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
+  <div className="w-full h-32 flex items-center justify-center opacity-20">
+    <div className="w-6 h-6 border-[1.5px] border-primary/20 border-t-primary rounded-full animate-spin" />
   </div>
 );
 
@@ -114,26 +114,55 @@ export default function LandingPage() {
         <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="SYS-HEALTH" />
           <Problems />
+        </Suspense>
+        
+        <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="STRAT-SOL" />
           <Solutions />
+        </Suspense>
+
+        <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="CX-METRICS" />
           <ClientExperience />
+        </Suspense>
+
+        <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="TRAF-ENG" />
           <TrafficStrategy />
+        </Suspense>
+
+        <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="ABOUT-HQ" />
           <About />
+        </Suspense>
+
+        <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="GROWTH-DATA" />
           <Stats />
+        </Suspense>
+
+        <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="PROC-PHASE" />
           <Process />
+        </Suspense>
+
+        <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="SHIP-ASSETS" />
           <Deliverables />
+        </Suspense>
+
+        <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="SCALE-UNIT" />
           <ScaleStrategy />
+        </Suspense>
+
+        <Suspense fallback={<LoadingFallback />}>
           <TechnicalDivider label="FAQ-SUPPORT" />
           <FAQ />
           <Blog />
+        </Suspense>
           
+        <Suspense fallback={<LoadingFallback />}>
           <section id="contact" className="py-24 md:py-32 px-6 relative overflow-hidden bg-background">
             <div className="max-w-7xl mx-auto">
               <div className="bg-surface rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-24 text-center relative overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] border border-border/10">

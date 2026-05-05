@@ -28,20 +28,27 @@ const Navbar = memo(() => {
   return (
     <>
       <nav className="sticky top-0 z-[101] flex max-w-7xl items-center justify-between px-8 py-6 mx-auto w-full bg-background/80 backdrop-blur-md border-b border-border/5">
-        <div className="cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <button 
+          className="cursor-pointer min-w-[120px] h-[40px] flex items-center outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg" 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          aria-label="Stay Studio 8 - Voltar ao topo"
+        >
           <Logo />
-        </div>
+        </button>
         
           <div className="hidden md:flex items-center space-x-10">
-            {navItems.map((item) => (
-              <button 
-                key={item.id}
-                onClick={() => handleNavClick(item.id)} 
-                className="nav-link text-sm font-bold uppercase tracking-widest text-muted hover:text-primary transition-colors"
-              >
-                {item.name}
-              </button>
-            ))}
+            <ul className="flex items-center space-x-10">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <button 
+                    onClick={() => handleNavClick(item.id)} 
+                    className="nav-link text-sm font-bold uppercase tracking-widest text-muted hover:text-foreground transition-colors"
+                  >
+                    {item.name}
+                  </button>
+                </li>
+              ))}
+            </ul>
           </div>
 
         <button 
@@ -55,6 +62,8 @@ const Navbar = memo(() => {
           onClick={() => setIsOpen(!isOpen)} 
           className="md:hidden text-foreground relative z-[102] p-2"
           aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -64,6 +73,7 @@ const Navbar = memo(() => {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
+            id="mobile-menu"
             initial={{ opacity: 0, x: '100%' }} 
             animate={{ opacity: 1, x: 0 }} 
             exit={{ opacity: 0, x: '100%' }}
@@ -71,18 +81,21 @@ const Navbar = memo(() => {
             className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-xl flex flex-col items-center justify-center space-y-8 md:hidden p-8"
           >
             <div className="flex flex-col items-center space-y-6 w-full">
-              {navItems.map((item, i) => (
-                <motion.button 
-                  key={item.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 * i }}
-                  onClick={() => handleNavClick(item.id)}
-                  className="text-4xl font-black text-foreground hover:text-primary transition-colors tracking-tighter"
-                >
-                  {item.name}
-                </motion.button>
-              ))}
+              <ul className="flex flex-col items-center space-y-6 w-full">
+                {navItems.map((item, i) => (
+                  <li key={item.id} className="w-full text-center">
+                    <motion.button 
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1 * i }}
+                      onClick={() => handleNavClick(item.id)}
+                      className="text-4xl font-black text-foreground hover:text-primary transition-colors tracking-tighter"
+                    >
+                      {item.name}
+                    </motion.button>
+                  </li>
+                ))}
+              </ul>
               
               <motion.button 
                 initial={{ opacity: 0, y: 20 }}

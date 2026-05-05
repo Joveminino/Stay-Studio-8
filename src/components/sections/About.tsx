@@ -7,10 +7,10 @@ const About = memo(() => (
       <div className="relative">
         <div className="story-block p-8 md:p-12 bg-background rounded-[2.5rem] md:rounded-[3rem] border border-accent/20 relative z-10 shadow-lg">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground mb-6 md:mb-8 text-balance leading-tight">Engenharia de <br /> Audiência & Conversão</h2>
-          <p className="text-muted text-sm md:text-lg leading-relaxed mb-6 md:mb-8 text-balance font-medium">
+          <p className="text-foreground/80 text-sm md:text-lg leading-relaxed mb-6 md:mb-8 text-balance font-medium">
             A staystudio8 nasceu para resolver um problema crônico do setor de lazer: a dependência de algoritmos e taxas abusivas. 
           </p>
-          <p className="text-muted text-sm md:text-lg leading-relaxed text-balance font-medium">
+          <p className="text-foreground/80 text-sm md:text-lg leading-relaxed text-balance font-medium">
             Não somos apenas uma agência de design. Somos um laboratório de performance que une a estética do luxo com a precisão do tráfego pago e a autoridade do SEO para garantir que seu negócio seja visto por quem realmente importa.
           </p>
         </div>
@@ -30,8 +30,8 @@ const About = memo(() => (
             <CheckCircle2 className="text-primary" size={20} />
           </div>
           <div>
-            <h4 className="text-lg md:text-xl font-bold text-foreground mb-2">Web Design Editorial</h4>
-            <p className="text-sm md:text-base text-muted font-medium">Interfaces que evocam desejo e autoridade, transformando visitantes em clientes.</p>
+            <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">Web Design Editorial</h3>
+            <p className="text-sm md:text-base text-foreground/70 font-medium">Interfaces que evocam desejo e autoridade, transformando visitantes em clientes.</p>
           </div>
         </div>
         <div className="flex gap-4 md:gap-6 items-start">
@@ -39,8 +39,8 @@ const About = memo(() => (
             <CheckCircle2 className="text-primary" size={20} />
           </div>
           <div>
-            <h4 className="text-lg md:text-xl font-bold text-foreground mb-2">Tráfego Pago de Alta Performance</h4>
-            <p className="text-sm md:text-base text-muted font-medium">Gestão de anúncios focada em ROI real, alcançando o público certo no momento certo.</p>
+            <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">Tráfego Pago de Alta Performance</h3>
+            <p className="text-sm md:text-base text-foreground/70 font-medium">Gestão de anúncios focada em ROI real, alcançando o público certo no momento certo.</p>
           </div>
         </div>
         <div className="flex gap-4 md:gap-6 items-start">
@@ -48,8 +48,8 @@ const About = memo(() => (
             <CheckCircle2 className="text-primary" size={20} />
           </div>
           <div>
-            <h4 className="text-lg md:text-xl font-bold text-foreground mb-2">SEO de Dominação</h4>
-            <p className="text-sm md:text-base text-muted font-medium">Estratégias para colocar seu negócio no topo das buscas orgânicas e locais.</p>
+            <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">SEO de Dominação</h3>
+            <p className="text-sm md:text-base text-foreground/70 font-medium">Estratégias para colocar seu negócio no topo das buscas orgânicas e locais.</p>
           </div>
         </div>
       </div>

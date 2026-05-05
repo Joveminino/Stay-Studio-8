@@ -1,1 +1,3 @@
+# Netlify redirects for SPA
+# This rule only applies when no static file is found matching the path
 /*    /index.html   200

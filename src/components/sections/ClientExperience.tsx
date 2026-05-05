@@ -178,8 +178,8 @@ const ClientExperience = memo(() => {
               <div className="relative z-10">
                 <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-8 mb-12">
                   <div className="flex flex-col gap-2">
-                    <span className="text-[10px] font-black uppercase tracking-[0.5em] text-primary/60">Configuração de Escala</span>
-                    <h4 className="text-xl md:text-2xl font-black text-foreground uppercase tracking-tight">Estratégia <span className="text-primary font-serif italic lowercase font-normal">Stay8</span></h4>
+                    <span className="text-[10px] font-black uppercase tracking-[0.5em] text-primary">Configuração de Escala</span>
+                    <h3 className="text-xl md:text-2xl font-black text-foreground uppercase tracking-tight">Estratégia <span className="text-primary font-serif italic lowercase font-normal">Stay8</span></h3>
                   </div>
                   
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 w-full xl:w-auto">
@@ -189,8 +189,8 @@ const ClientExperience = memo(() => {
                         { label: 'AUTORID.', val: `${metrics.authority}`, color: 'text-secondary' },
                         { label: 'LUCRO', val: `+${metrics.ltv}%`, color: 'text-accent' }
                       ].map((m, idx) => (
-                        <div key={idx} className="flex flex-col items-center bg-white/60 p-2 md:p-3 rounded-xl md:rounded-2xl border border-border/20 shadow-sm min-w-[70px] md:min-w-[80px]">
-                          <span className="text-[8px] md:text-[9px] font-black uppercase text-muted/60 tracking-widest mb-1 md:mb-1.5">{m.label}</span>
+                        <div key={idx} className="flex flex-col items-center bg-white/90 p-2 md:p-3 rounded-xl md:rounded-2xl border border-border/20 shadow-sm min-w-[70px] md:min-w-[80px]">
+                          <span className="text-[8px] md:text-[9px] font-black uppercase text-foreground/80 tracking-widest mb-1 md:mb-1.5">{m.label}</span>
                           <div className={`font-mono text-[10px] md:text-sm lg:text-base font-black ${m.color}`}>
                             {m.val}
                           </div>

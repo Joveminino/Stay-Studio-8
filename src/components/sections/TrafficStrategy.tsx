@@ -77,7 +77,7 @@ const TrafficStrategy = memo(() => {
           ))}
         </div>
 
-        <div className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-border/50 flex flex-wrap justify-center gap-6 md:gap-12 opacity-40">
+        <div className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-border/50 flex flex-wrap justify-center gap-6 md:gap-12 text-muted">
           <div className="flex items-center gap-2">
             <Layers size={12} className="text-primary" />
             <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest">Meta Business Suite</span>
@@ -112,7 +112,7 @@ const TrafficStrategy = memo(() => {
               Dominar Canais de Aquisição <ArrowRight size={24} />
             </span>
           </motion.button>
-          <p className="mt-6 text-muted/60 font-mono text-[9px] md:text-[10px] uppercase tracking-widest text-center">Atenção: Vagas limitadas por setor/região.</p>
+          <p className="mt-6 text-muted font-mono text-[9px] md:text-[10px] uppercase tracking-widest text-center">Atenção: Vagas limitadas por setor/região.</p>
         </div>
       </div>
     </section>

@@ -100,15 +100,17 @@ const ContactForm = memo(() => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-balance">
         <div className="space-y-2">
-          <label htmlFor="name" className="block text-foreground text-xs font-black uppercase tracking-widest ml-1 opacity-50">Nome Completo</label>
+          <label htmlFor="name" className="block text-foreground text-xs font-black uppercase tracking-widest ml-1">Nome Completo</label>
           <input 
             id="name"
             type="text" 
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className={`w-full bg-surface border ${errors.name ? 'border-destructive' : 'border-border/60'} rounded-xl p-4 text-foreground outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder:text-muted/40 font-medium`}
-            placeholder="Seu nome"
+            className={`w-full bg-surface border ${errors.name ? 'border-destructive' : 'border-border/60'} rounded-xl p-4 text-foreground outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder:text-muted/60 font-medium`}
+            placeholder="Ex: João Silva"
+            aria-required="true"
+            aria-invalid={!!errors.name}
           />
           <AnimatePresence>
             {errors.name && (
@@ -123,15 +125,17 @@ const ContactForm = memo(() => {
         </div>
 
         <div className="space-y-2">
-          <label htmlFor="whatsapp" className="block text-foreground text-xs font-black uppercase tracking-widest ml-1 opacity-50">WhatsApp</label>
+          <label htmlFor="whatsapp" className="block text-foreground text-xs font-black uppercase tracking-widest ml-1">WhatsApp</label>
           <input 
             id="whatsapp"
             type="tel" 
             name="whatsapp"
             value={formData.whatsapp}
             onChange={handleChange}
-            className={`w-full bg-surface border ${errors.whatsapp ? 'border-destructive' : 'border-border/60'} rounded-xl p-4 text-foreground outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder:text-muted/40 font-medium`}
+            className={`w-full bg-surface border ${errors.whatsapp ? 'border-destructive' : 'border-border/60'} rounded-xl p-4 text-foreground outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder:text-muted/60 font-medium`}
             placeholder="(11) 99999-9999"
+            aria-required="true"
+            aria-invalid={!!errors.whatsapp}
           />
           <AnimatePresence>
             {errors.whatsapp && (
@@ -147,15 +151,17 @@ const ContactForm = memo(() => {
       </div>
 
       <div className="space-y-2 text-balance">
-        <label htmlFor="email" className="block text-foreground text-xs font-black uppercase tracking-widest ml-1 opacity-50">E-mail Corporativo</label>
+        <label htmlFor="email" className="block text-foreground text-xs font-black uppercase tracking-widest ml-1">E-mail Corporativo</label>
         <input 
           id="email"
           type="email" 
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className={`w-full bg-surface border ${errors.email ? 'border-destructive' : 'border-border/60'} rounded-xl p-4 text-foreground outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder:text-muted/40 font-medium`}
+          className={`w-full bg-surface border ${errors.email ? 'border-destructive' : 'border-border/60'} rounded-xl p-4 text-foreground outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder:text-muted/60 font-medium`}
           placeholder="seu@negocio.com.br"
+          aria-required="true"
+          aria-invalid={!!errors.email}
         />
         <AnimatePresence>
           {errors.email && (
@@ -170,8 +176,8 @@ const ContactForm = memo(() => {
       </div>
 
       <div className="space-y-4 pt-2 text-balance">
-        <label className="block text-foreground text-xs font-black uppercase tracking-widest ml-1 opacity-50">Qual o foco do seu projeto?</label>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <label id="service-label" className="block text-foreground text-xs font-black uppercase tracking-widest ml-1">Qual o foco do seu projeto?</label>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3" role="radiogroup" aria-labelledby="service-label">
           {[
             { id: 'gestao_trafego', label: 'Tráfego Pago' },
             { id: 'seo', label: 'SEO' },
@@ -187,7 +193,7 @@ const ContactForm = memo(() => {
                 value={s.id} 
                 checked={formData.service === s.id}
                 onChange={handleChange}
-                className="hidden"
+                className="sr-only"
               />
               <span className="text-xs font-bold uppercase tracking-widest">{s.label}</span>
             </label>

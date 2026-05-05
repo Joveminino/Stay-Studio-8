@@ -92,7 +92,7 @@ const CinematicHero = memo(() => {
           <div className="absolute -top-10 right-10 md:right-20 hero-abstract-icon floating-pill will-change-transform">
             <div className="w-16 h-16 md:w-24 md:h-24 bg-white rounded-full shadow-[0_20px_50px_rgba(37,99,235,0.2)] flex items-center justify-center border border-border/50 p-4 group/svg hover:scale-110 transition-transform duration-700">
                <div className="relative w-full h-full flex items-center justify-center">
-                  <svg viewBox="0 0 100 100" className="w-full h-full text-primary" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="100" height="100" viewBox="0 0 100 100" className="w-full h-full text-primary" xmlns="http://www.w3.org/2000/svg">
                     <rect x="20" y="60" width="15" height="20" fill="currentColor" opacity="0.3">
                       <animate attributeName="height" values="20;40;20" dur="2s" repeatCount="indefinite" />
                     </rect>
@@ -143,9 +143,8 @@ const CinematicHero = memo(() => {
       </div>
           </div>
 
-          {/* Dotted Arrow Decoration */}
           <div className="absolute bottom-[-100px] right-1/4 opacity-20 hidden lg:block">
-            <svg width="120" height="60" viewBox="0 0 120 60" fill="none">
+            <svg width="120" height="60" viewBox="0 0 120 60" fill="none" aria-hidden="true">
               <path d="M10 50C30 10 90 10 110 50" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" />
               <path d="M105 45L110 50L105 55" stroke="currentColor" strokeWidth="2" />
             </svg>

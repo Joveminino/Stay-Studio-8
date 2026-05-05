@@ -83,7 +83,7 @@ export default function BlogPost() {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-4 text-xs font-mono text-primary uppercase tracking-widest"
+              className="flex items-center gap-4 text-xs font-mono font-bold text-primary uppercase tracking-widest"
             >
               <div className="flex items-center gap-1.5">
                 <Calendar size={14} />
@@ -147,15 +147,15 @@ export default function BlogPost() {
           >
             <ReactMarkdown
               components={{
-                h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4">{children}</h1>,
+                h1: ({ children }) => <h2 className="text-3xl font-bold mt-8 mb-4">{children}</h2>,
                 h2: ({ children }) => <h2 className="text-2xl font-bold mt-8 mb-4">{children}</h2>,
                 h3: ({ children }) => <h3 className="text-xl font-bold mt-6 mb-3">{children}</h3>,
-                p: ({ children }) => <p className="text-muted leading-relaxed mb-6">{children}</p>,
-                ul: ({ children }) => <ul className="list-disc pl-6 mb-6 space-y-2 text-muted">{children}</ul>,
-                ol: ({ children }) => <ol className="list-decimal pl-6 mb-6 space-y-2 text-muted">{children}</ol>,
+                p: ({ children }) => <p className="text-foreground leading-relaxed mb-6 font-medium">{children}</p>,
+                ul: ({ children }) => <ul className="list-disc pl-6 mb-6 space-y-2 text-foreground font-medium">{children}</ul>,
+                ol: ({ children }) => <ol className="list-decimal pl-6 mb-6 space-y-2 text-foreground font-medium">{children}</ol>,
                 li: ({ children }) => <li>{children}</li>,
-                a: ({ children, href }) => <a href={href} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">{children}</a>,
-                blockquote: ({ children }) => <blockquote className="border-l-4 border-primary pl-4 italic my-6 text-muted-foreground">{children}</blockquote>,
+                a: ({ children, href }) => <a href={href} className="text-primary hover:underline font-bold" target="_blank" rel="noopener noreferrer">{children}</a>,
+                blockquote: ({ children }) => <blockquote className="border-l-4 border-primary pl-4 italic my-6 text-muted font-medium">{children}</blockquote>,
                 img: ({ src, alt }) => <img src={src} alt={alt} className="rounded-2xl my-8 border border-border/10 w-full" />,
                 strong: ({ children }) => <strong className="font-bold text-foreground">{children}</strong>,
               }}

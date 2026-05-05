@@ -54,14 +54,14 @@ const ScaleStrategy = memo(() => {
                 <button
                   key={id}
                   onClick={() => setActiveTab(id)}
-                  className={`w-full p-6 rounded-[2rem] border transition-all flex items-center gap-5 text-left group ${activeTab === id ? 'bg-white border-primary/20 shadow-2xl scale-[1.03]' : 'bg-transparent border-transparent opacity-60 hover:opacity-100 hover:bg-white/5'}`}
+                  className={`w-full p-6 rounded-[2rem] border transition-all flex items-center gap-5 text-left group ${activeTab === id ? 'bg-white border-primary/20 shadow-2xl scale-[1.03]' : 'bg-transparent border-transparent opacity-80 hover:opacity-100 hover:bg-white/5'}`}
                 >
-                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors ${activeTab === id ? 'bg-primary text-white' : 'bg-background text-muted group-hover:text-primary'}`}>
+                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors ${activeTab === id ? 'bg-primary text-white' : 'bg-background text-foreground/60 group-hover:text-primary'}`}>
                     {s.icon}
                   </div>
                   <div>
-                    <h4 className={`font-black text-sm uppercase tracking-tight transition-colors ${activeTab === id ? 'text-foreground' : 'text-muted'}`}>{s.title}</h4>
-                    <span className="text-[8px] uppercase font-bold tracking-[0.2em] text-muted/60">{s.subtitle}</span>
+                    <h4 className={`font-black text-sm uppercase tracking-tight transition-colors ${activeTab === id ? 'text-foreground' : 'text-foreground/80'}`}>{s.title}</h4>
+                    <span className={`text-[8px] uppercase font-bold tracking-[0.2em] ${activeTab === id ? 'text-primary' : 'text-foreground/60'}`}>{s.subtitle}</span>
                   </div>
                 </button>
               ))}

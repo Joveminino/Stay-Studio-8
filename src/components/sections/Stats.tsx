@@ -37,42 +37,43 @@ const Stats = memo(() => {
   return (
     <section ref={containerRef} className="bg-white py-24 md:py-36 px-6 md:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
+        <h2 className="sr-only">Nossas Métricas e Vantagens</h2>
         <div className="grid lg:grid-cols-[1.5fr_1fr_1fr] gap-12 lg:gap-20 items-center">
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-10 md:gap-y-12">
             <div className="stats-card">
               <div className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-6 uppercase tracking-tighter leading-none text-balance">Tração <br /> Absoluta</div>
-              <p className="text-xs md:text-sm lg:text-base text-muted font-bold leading-tight uppercase tracking-wider">
+              <p className="text-xs md:text-sm lg:text-base text-foreground/70 font-bold leading-tight uppercase tracking-wider">
                 Audiência Própria <br /> & Vendas Diretas
               </p>
             </div>
             <div className="stats-card">
               <div className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-6 uppercase tracking-tighter leading-none text-balance">ROI <br /> Cirúrgico</div>
-              <p className="text-xs md:text-sm lg:text-base text-muted font-bold leading-tight uppercase tracking-wider">
+              <p className="text-xs md:text-sm lg:text-base text-foreground/70 font-bold leading-tight uppercase tracking-wider">
                 Otimização Radical <br /> de Custos (CPA)
               </p>
             </div>
             <div className="stats-card">
               <div className="text-3xl md:text-4xl lg:text-5xl font-black text-primary mb-6 uppercase tracking-tighter leading-none text-balance">Velocity <br /> Score</div>
-              <p className="text-xs md:text-sm lg:text-base text-muted font-bold leading-tight uppercase tracking-wider">
+              <p className="text-xs md:text-sm lg:text-base text-foreground/70 font-bold leading-tight uppercase tracking-wider">
                 Performance LCP <br /> & Milissegundos
               </p>
             </div>
             <div className="stats-card">
               <div className="text-3xl md:text-4xl lg:text-5xl font-black text-secondary mb-6 uppercase tracking-tighter leading-none text-balance">Soberania</div>
-              <p className="text-xs md:text-sm lg:text-base text-muted font-bold leading-tight uppercase tracking-wider">
+              <p className="text-xs md:text-sm lg:text-base text-foreground/70 font-bold leading-tight uppercase tracking-wider">
                 Liberdade Total <br /> de Taxas
               </p>
             </div>
             <div className="stats-card">
               <div className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-6 uppercase tracking-tighter leading-none text-balance">SEO <br /> Elite</div>
-              <p className="text-xs md:text-sm lg:text-base text-muted font-bold leading-tight uppercase tracking-wider">
+              <p className="text-xs md:text-sm lg:text-base text-foreground/70 font-bold leading-tight uppercase tracking-wider">
                 Dominação <br /> Orgânica
               </p>
             </div>
             <div className="stats-card">
               <div className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-6 uppercase tracking-tighter leading-none text-balance">Maps <br /> #1</div>
-              <p className="text-xs md:text-sm lg:text-base text-muted font-bold leading-tight uppercase tracking-wider">
+              <p className="text-xs md:text-sm lg:text-base text-foreground/70 font-bold leading-tight uppercase tracking-wider">
                 Liderança <br /> Local
               </p>
             </div>
@@ -100,6 +101,8 @@ const Stats = memo(() => {
                 <img 
                   src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800" 
                   alt="Design Abstrato" 
+                  width="400"
+                  height="500"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   referrerPolicy="no-referrer"
                   loading="lazy"

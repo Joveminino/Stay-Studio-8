@@ -1,73 +1,42 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { memo } from 'react';
 
-const BackgroundParticles = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const particles = gsap.utils.toArray('.bg-particle');
-      particles.forEach((p: any) => {
-        gsap.to(p, {
-          y: 'random(-100, 100)',
-          x: 'random(-100, 100)',
-          opacity: 'random(0.1, 0.3)',
-          duration: 'random(10, 20)',
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-          delay: 'random(0, 5)'
-        });
-      });
-
-      const bokeh = gsap.utils.toArray('.bg-bokeh');
-      bokeh.forEach((b: any) => {
-        gsap.to(b, {
-          scale: 'random(1.1, 1.5)',
-          opacity: 'random(0.05, 0.15)',
-          duration: 'random(15, 25)',
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-          delay: 'random(0, 10)'
-        });
-      });
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
-
+const BackgroundParticles = memo(() => {
   return (
-    <div ref={containerRef} className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      {/* Bokeh Lights */}
-      <div className="bg-bokeh absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-primary/10 blur-[120px]" />
-      <div className="bg-bokeh absolute bottom-[-10%] right-[-10%] w-[35vw] h-[35vw] rounded-full bg-secondary/10 blur-[100px]" />
-      <div className="bg-bokeh absolute top-[20%] right-[10%] w-[25vw] h-[25vw] rounded-full bg-accent/5 blur-[80px]" />
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+      {/* Bokeh Lights - Now using pure CSS for better performance */}
+      <div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-primary/10 blur-[120px] animate-pulse" style={{ animationDuration: '8s' }} />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[35vw] h-[35vw] rounded-full bg-secondary/10 blur-[100px] animate-pulse" style={{ animationDuration: '12s' }} />
+      <div className="absolute top-[20%] right-[10%] w-[25vw] h-[25vw] rounded-full bg-accent/5 blur-[80px] animate-pulse" style={{ animationDuration: '10s' }} />
 
-      {/* Particles */}
-      {Array.from({ length: 15 }).map((_, i) => (
+      {/* Particles - Minimal set for ambiance without heavy JS load */}
+      {Array.from({ length: 12 }).map((_, i) => (
         <div 
           key={i}
-          className="bg-particle absolute h-1 w-1 rounded-full bg-primary/20 will-change-transform hidden sm:block"
+          className="absolute h-1 w-1 rounded-full bg-primary/20 hidden sm:block animate-float"
           style={{ 
             top: `${Math.random() * 100}%`,
             left: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 5}s`,
+            animationDuration: `${15 + Math.random() * 10}s`
           }}
         />
       ))}
-      {/* Fewer particles on mobile */}
-      {Array.from({ length: 6 }).map((_, i) => (
+      {Array.from({ length: 4 }).map((_, i) => (
         <div 
           key={`m-${i}`}
-          className="bg-particle absolute h-1 w-1 rounded-full bg-primary/20 will-change-transform sm:hidden"
+          className="absolute h-1 w-1 rounded-full bg-primary/20 sm:hidden animate-float"
           style={{ 
             top: `${Math.random() * 100}%`,
             left: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 5}s`,
+            animationDuration: `${12 + Math.random() * 8}s`
           }}
         />
       ))}
     </div>
   );
-};
+});
+
+BackgroundParticles.displayName = 'BackgroundParticles';
 
 export default BackgroundParticles;
