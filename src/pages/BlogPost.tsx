@@ -53,7 +53,7 @@ export default function BlogPost() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <Helmet>
         <title>{post.title} | Stay Studio 8 Blog</title>
         <meta name="description" content={post.description} />

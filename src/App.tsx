@@ -10,7 +10,7 @@ import BlogPost from './pages/BlogPost';
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-bg selection:bg-accent/30">
+      <div className="min-h-screen w-full relative bg-bg selection:bg-accent/30 overflow-x-hidden">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/blog/:slug" element={<BlogPost />} />

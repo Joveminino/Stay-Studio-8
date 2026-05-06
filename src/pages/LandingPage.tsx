@@ -46,7 +46,7 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="min-h-screen selection:bg-accent/30 relative bg-background">
+    <div className="min-h-screen selection:bg-accent/30 relative bg-background overflow-x-hidden">
       <Helmet>
         <title>Stay Studio 8 | Design de Luxo & Tráfego de Alta Performance</title>
         <meta name="description" content="A Stay Studio 8 é um laboratório de escala para hotéis, agências e gastronomia. Web design editorial, tráfego pago focado em ROI e SEO de dominação local." />
