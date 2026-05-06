@@ -82,7 +82,7 @@ const Deliverables = memo(() => {
                 onClick={() => scrollToSection('contact')}
                 className="magnetic-btn relative overflow-hidden bg-white text-foreground px-8 md:px-12 py-4 md:py-5 rounded-full font-black text-base md:text-lg transition-all uppercase italic w-full sm:w-auto shadow-lg group/btn"
               >
-                <span className="relative z-10 group-hover/btn:text-white transition-colors duration-500">Ativar Projeto Agora</span>
+                <span className="relative z-10 group-hover/btn:text-white transition-colors duration-500">Agendar Consultoria</span>
                 <div className="absolute inset-0 bg-primary translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 ease-out" />
               </button>
             </div>

@@ -103,8 +103,8 @@
     66% { transform: translate(-20px, 40px); }
   }
 
-  section:not(#hero) {
+  /* section:not(#hero) {
     content-visibility: auto;
     contain-intrinsic-size: 1px 1000px;
-  }
+  } */
 }

@@ -38,7 +38,7 @@ const Problems = memo(() => {
             onClick={() => scrollToSection('contact')}
             className="magnetic-btn inline-flex items-center justify-center gap-3 md:gap-4 bg-primary text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-base md:text-lg hover:scale-105 transition-all shadow-xl shadow-primary/20 uppercase tracking-tighter italic w-full sm:w-auto"
           >
-            Bloquear o Vazamento de Receita <ArrowRight size={20} />
+            Agendar Consultoria <ArrowRight size={20} />
           </button>
         </div>
       </div>

@@ -112,7 +112,7 @@ const ScaleStrategy = memo(() => {
                           onClick={() => scrollToSection('contact')}
                           className="magnetic-btn relative overflow-hidden bg-primary text-white px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest transition-all shadow-lg shadow-primary/20 group/btn"
                         >
-                          <span className="relative z-10 group-hover/btn:text-foreground transition-colors duration-500">Ativar Unidade de Escala</span>
+                          <span className="relative z-10 group-hover/btn:text-foreground transition-colors duration-500">Agendar Diagnóstico</span>
                           <div className="absolute inset-0 bg-white translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 ease-out" />
                         </button>
                      </div>

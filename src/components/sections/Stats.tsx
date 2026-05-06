@@ -117,7 +117,7 @@ const Stats = memo(() => {
                   onClick={() => scrollToSection('contact')}
                   className="flex items-center justify-center gap-3 bg-foreground text-background px-8 py-4 rounded-full font-bold hover:bg-primary transition-all shadow-lg"
                 >
-                  Análise de Performance <ArrowRight size={20} />
+                  Agendar Agora <ArrowRight size={20} />
                 </button>
               </div>
             </div>

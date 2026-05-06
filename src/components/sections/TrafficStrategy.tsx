@@ -109,7 +109,7 @@ const TrafficStrategy = memo(() => {
           >
             <div className="absolute inset-0 bg-primary translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
             <span className="relative z-10 flex items-center justify-center gap-4">
-              Dominar Canais de Aquisição <ArrowRight size={24} />
+              Iniciar Consultoria <ArrowRight size={24} />
             </span>
           </motion.button>
           <p className="mt-6 text-muted font-mono text-[9px] md:text-[10px] uppercase tracking-widest text-center">Atenção: Vagas limitadas por setor/região.</p>

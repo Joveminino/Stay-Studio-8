@@ -27,15 +27,16 @@ const Navbar = memo(() => {
 
   return (
     <>
-      <nav className="sticky top-0 z-[101] flex max-w-7xl items-center justify-between px-8 py-6 mx-auto w-full bg-background/80 backdrop-blur-md border-b border-border/5">
-        <button 
-          className="cursor-pointer min-w-[120px] h-[40px] flex items-center outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg" 
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          aria-label="Stay Studio 8 - Voltar ao topo"
-        >
-          <Logo />
-        </button>
-        
+      <nav className="sticky top-0 z-[101] w-full bg-background/80 backdrop-blur-md border-b border-border/10">
+        <div className="flex max-w-7xl items-center justify-between px-8 py-6 mx-auto w-full">
+          <button 
+            className="cursor-pointer min-w-[120px] h-[40px] flex items-center outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg" 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            aria-label="Stay Studio 8 - Voltar ao topo"
+          >
+            <Logo />
+          </button>
+          
           <div className="hidden md:flex items-center space-x-10">
             <ul className="flex items-center space-x-10">
               {navItems.map((item) => (
@@ -51,22 +52,23 @@ const Navbar = memo(() => {
             </ul>
           </div>
 
-        <button 
-          onClick={() => scrollToSection('contact')}
-          className="nav-link hidden md:block bg-foreground text-background px-8 py-3 rounded-full text-sm font-black uppercase tracking-tight hover:bg-primary transition-all shadow-lg hover:scale-105 active:scale-95 border border-primary/10"
-        >
-          Diagnóstico Grátis
-        </button>
+          <button 
+            onClick={() => scrollToSection('contact')}
+            className="nav-link hidden md:block bg-foreground text-background px-8 py-3 rounded-full text-sm font-black uppercase tracking-tight hover:bg-primary transition-all shadow-lg hover:scale-105 active:scale-95 border border-primary/10"
+          >
+            Agendar Agora
+          </button>
 
-        <button 
-          onClick={() => setIsOpen(!isOpen)} 
-          className="md:hidden text-foreground relative z-[102] p-2"
-          aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
-          aria-expanded={isOpen}
-          aria-controls="mobile-menu"
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+          <button 
+            onClick={() => setIsOpen(!isOpen)} 
+            className="md:hidden text-foreground relative z-[102] p-2"
+            aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu Overlay */}
@@ -104,7 +106,7 @@ const Navbar = memo(() => {
                 onClick={() => handleNavClick('contact')}
                 className="mt-8 w-full bg-primary text-on-primary py-6 rounded-2xl text-xl font-bold shadow-xl"
               >
-                Escalar Reservas
+                Agendar Consultoria
               </motion.button>
             </div>
 

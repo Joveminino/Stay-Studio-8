@@ -298,7 +298,7 @@ const Solutions = memo(() => {
                     onClick={() => scrollToSection('contact')} 
                     className="magnetic-btn w-full bg-primary text-on-primary py-4 md:py-5 rounded-2xl font-bold text-base md:text-lg shadow-xl hover:brightness-110 transition-all flex items-center justify-center gap-2"
                   >
-                    Ativar Escala <ArrowRight size={18} />
+                    Agendar Consultoria <ArrowRight size={18} />
                   </button>
                 </div>
               </div>
