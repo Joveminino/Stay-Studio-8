@@ -232,6 +232,7 @@ const Solutions = memo(() => {
                     id="qty-input"
                     type="number" 
                     value={qty}
+                    onWheel={(e) => (e.target as HTMLInputElement).blur()}
                     onChange={(e) => setQty(parseInt(e.target.value) || 0)}
                     className="w-full bg-background p-3 md:p-4 rounded-xl text-foreground font-bold text-lg md:text-xl border border-accent/30 outline-none focus-visible:ring-2 focus-visible:ring-primary transition-all shadow-inner"
                   />
@@ -245,6 +246,7 @@ const Solutions = memo(() => {
                     id="ticket-input"
                     type="number" 
                     value={ticket}
+                    onWheel={(e) => (e.target as HTMLInputElement).blur()}
                     onChange={(e) => setTicket(parseInt(e.target.value) || 0)}
                     className="w-full bg-background p-3 md:p-4 rounded-xl text-foreground font-bold text-lg md:text-xl border border-accent/30 outline-none focus-visible:ring-2 focus-visible:ring-primary transition-all shadow-inner"
                   />
@@ -261,6 +263,7 @@ const Solutions = memo(() => {
                     id="fee-input"
                     type="number"
                     value={fee}
+                    onWheel={(e) => (e.target as HTMLInputElement).blur()}
                     onChange={(e) => setFee(parseInt(e.target.value) || 0)}
                     className="w-full bg-background p-3 md:p-4 rounded-xl text-foreground font-bold text-lg md:text-xl border border-accent/30 outline-none focus-visible:ring-2 focus-visible:ring-primary transition-all shadow-inner"
                   />
@@ -274,6 +277,7 @@ const Solutions = memo(() => {
                     id="goal-input"
                     type="number"
                     value={goal}
+                    onWheel={(e) => (e.target as HTMLInputElement).blur()}
                     onChange={(e) => setGoal(parseInt(e.target.value) || 0)}
                     className="w-full bg-background p-3 md:p-4 rounded-xl text-foreground font-bold text-lg md:text-xl border border-accent/30 outline-none focus-visible:ring-2 focus-visible:ring-primary transition-all shadow-inner"
                   />
